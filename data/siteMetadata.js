@@ -10,14 +10,14 @@ const siteMetadata = {
   siteRepo: 'https://github.com/hridesh94/blog-next.js.git',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
-  mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
+  mastodon: 'https://www.linkedin.com/in/hridesh-sapkota-4a2bb9236/',
+  email: 'hridesh.web@gmail.com',
+  github: 'https://github.com/hridesh94',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  linkedin: 'https://www.linkedin.com/in/hridesh-sapkota-4a2bb9236/',
+  locale: 'en-NP',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
