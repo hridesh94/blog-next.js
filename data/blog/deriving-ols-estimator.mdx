@@ -1,143 +1,92 @@
 ---
-title: Deriving the OLS Estimator
-date: '2020-12-21'
-tags: ['next js', 'math', 'ols']
-draft: false
-summary: 'How to derive the OLS Estimator with matrix notation and a tour of math typesetting using markdown with the help of KaTeX.'
+title: "The False Promise of Social Connection"
+description: "Exploring the impact of social media on genuine human connections and the consequences of false social interaction in the digital age."
+date: "September 10, 2023"
+tags: ["Technology", "Society"]
 ---
 
-# Introduction
+import Image from 'next/image';
 
-Parsing and display of math equations is included in this blog template. Parsing of math is enabled by `remark-math` and `rehype-katex`.
-KaTeX and its associated font is included in `_document.js` so feel free to use it on any page.
-[^footnote]
+# The False Promise of Social Connection
 
-[^footnote]: For the full list of supported TeX functions, check out the [KaTeX documentation](https://katex.org/docs/supported.html)
+<div class="flex items-center pt-5 sm:pt-8">
+    <p class="pr-2 font-body font-light text-primary dark:text-white">
+        September 10, 2023
+    </p>
+    <span class="vdark:text-white font-body text-grey">//</span>
+    <p class="pl-2 font-body font-light text-primary dark:text-white">
+        5 min read
+    </p>
+</div>
 
-Inline math symbols can be included by enclosing the term between the `$` symbol.
+<Image
+    src="/assets/img/false/stable-diffusion-xl_clipdrop-cleanup-_2_.webp"
+    alt="neural nets"
+    width={1200}
+    height={800}
+/>
 
-Math code blocks are denoted by `$$`.
+In today's digital age, it's nearly impossible to escape the allure of social media platforms. We've all fallen into the endless scroll, watched countless videos, and followed influencers, celebrities, and even strangers, all in the name of "connection." But are we truly connecting, or are we merely being sold a false promise of social interaction?
 
-If you intend to use the `$` sign instead of math, you can escape it (`\$`), or specify the HTML entity (`&dollar;`) [^2]
+## Background and Context
 
-Inline or manually enumerated footnotes are also supported. Click on the links above to see them in action.
+My journey into this topic began with a podcast episode of "Your Undivided Attention." In that episode, psychotherapist and relationship expert Esther Perel delved deep into the way social media and the rise of artificial intelligence are affecting our ability to connect genuinely. One particular segment of the conversation struck a chord with me: the idea that modern loneliness disguises itself as hyperconnectivity.
 
-[^2]: \$10 and &dollar;20.
+Esther Perel astutely observed, "You can have 1,000 virtual friends but nobody to come and feed your cat. Who is going to actually go and get your prescription at the pharmacy when you need it?" This insightful observation highlighted the profound shift in our understanding of words like "community" and "followers" in the digital age.
 
-# Deriving the OLS Estimator
+> The shadows of bias have cast a long history, an indelible part of human existence.
 
-Using matrix notation, let $n$ denote the number of observations and $k$ denote the number of regressors.
+## Shaping the World Around Us
 
-The vector of outcome variables $\mathbf{Y}$ is a $n \times 1$ matrix,
+This realization forced me to look at my surroundings. I saw how children and even the older generation have become captivated by their smartphones. It's almost become the norm to have one's face buried in a screen all day. This is particularly evident in places like Nepal, where older generations, not well-versed in typing, rely heavily on social media recommendation algorithms.
 
-```tex
-\mathbf{Y} = \left[\begin{array}
-  {c}
-  y_1 \\
-  . \\
-  . \\
-  . \\
-  y_n
-\end{array}\right]
-```
+The algorithms prioritize screen time over genuine human connection, pushing users down attention-hoarding rabbit holes. A visit to the trending page on platforms like YouTube or Facebook reveals a world dominated by algorithms that care little about your well-being.
 
-$$
-\mathbf{Y} = \left[\begin{array}
-  {c}
-  y_1 \\
-  . \\
-  . \\
-  . \\
-  y_n
-\end{array}\right]
-$$
+<div class="twitter-card">
+    <h4 class="twitter-card-title"> "Our data archives, collected over time, might unwittingly encapsulate the very biases we seek to overcome. These biases find their way into the algorithms, resulting in skewed outputs."</h4>
+</div>
 
-The matrix of regressors $\mathbf{X}$ is a $n \times k$ matrix (or each row is a $k \times 1$ vector),
+Yet, in the midst of this reflection, a counterargument emerges. Could these technologies, infused with our societal shadows, act as mirrors that force us to confront our prejudices? It's an intriguing perspective—the data-driven projections could be both a challenge and an opportunity. Instead of merely pointing fingers at technology, we could channel our focus towards ourselves and our societies. In essence, the biases within AI might be unsettling echoes of our deeply ingrained societal unfairness.
 
-```latex
-\mathbf{X} = \left[\begin{array}
-  {ccccc}
-  x_{11} & . & . & . & x_{1k} \\
-  . & . & . & . & .  \\
-  . & . & . & . & .  \\
-  . & . & . & . & .  \\
-  x_{n1} & . & . & . & x_{nn}
-\end{array}\right] =
-\left[\begin{array}
-  {c}
-  \mathbf{x}'_1 \\
-  . \\
-  . \\
-  . \\
-  \mathbf{x}'_n
-\end{array}\right]
-```
+## The Effects
 
-$$
-\mathbf{X} = \left[\begin{array}
-  {ccccc}
-  x_{11} & . & . & . & x_{1k} \\
-  . & . & . & . & .  \\
-  . & . & . & . & .  \\
-  . & . & . & . & .  \\
-  x_{n1} & . & . & . & x_{nn}
-\end{array}\right] =
-\left[\begin{array}
-  {c}
-  \mathbf{x}'_1 \\
-  . \\
-  . \\
-  . \\
-  \mathbf{x}'_n
-\end{array}\right]
-$$
+But why does it matter, you might ask? What's wrong with people choosing what they watch and enjoy on social media? The answer lies in the generations that need the most care and attention. For many, especially the elderly, these platforms are a lifeline to the outside world, a way to feel connected when traditional forms of connection are scarce.
 
-The vector of error terms $\mathbf{U}$ is also a $n \times 1$ matrix.
+<Image
+    src="/assets/img/false/stable-diffusion-xl_clipdrop-cleanup.webp"
+    alt="societal toll"
+    width={1200}
+    height={800}
+/>
 
-At times it might be easier to use vector notation. For consistency, I will use the bold small x to denote a vector and capital letters to denote a matrix. Single observations are denoted by the subscript.
+However, studies show that the proliferation of social media platforms, especially among teenagers and older generations, is taking a toll on mental health. Loneliness, anxiety, and depression are becoming more prevalent as real-world relationships erode in favor of virtual ones.
 
-## Least Squares
+So, how can we navigate this landscape of false social connection and its consequences? It's essential to recognize that social media, while a powerful tool, should not replace genuine human interactions. Here are a few steps we can take:
 
-**Start**:  
-$$y_i = \mathbf{x}'_i \beta + u_i$$
+1. **Digital Detox**: Periodically disconnect from social media to reevaluate its role in your life and prioritize real connections.
+2. **Digital Literacy**: Encourage people of all ages to understand how algorithms work and to be critical of the content they consume.
+3. **Promote Offline Activities**: Encourage hobbies, physical activities, and local community engagement to balance screen time.
+4. **Foster Real Connections**: Make a conscious effort to spend quality time with family and friends in the physical world.
+5. **Advocate for Change**: Support policies and initiatives that address the mental health impact of social media and promote responsible use.
 
-**Assumptions**:
+## Conclusion
 
-1. Linearity (given above)
-2. $E(\mathbf{U}|\mathbf{X}) = 0$ (conditional independence)
-3. rank($\mathbf{X}$) = $k$ (no multi-collinearity i.e. full rank)
-4. $Var(\mathbf{U}|\mathbf{X}) = \sigma^2 I_n$ (Homoskedascity)
+The false promise of social connection has become an epidemic in the digital age. We must recognize that genuine relationships cannot be replaced by virtual likes, follows, and shares. By understanding the impact of social media and taking steps to prioritize real connections, we can find a healthier balance in our lives and help those around us do the same. In doing so, we can reclaim the true essence of "community" and "followers" and break free from the allure of empty online connections.
 
-**Aim**:  
-Find $\beta$ that minimises the sum of squared errors:
+This is still a work in progress. Stay tuned for more!
 
-$$
-Q = \sum_{i=1}^{n}{u_i^2} = \sum_{i=1}^{n}{(y_i - \mathbf{x}'_i\beta)^2} = (Y-X\beta)'(Y-X\beta)
-$$
-
-**Solution**:  
-Hints: $Q$ is a $1 \times 1$ scalar, by symmetry $\frac{\partial b'Ab}{\partial b} = 2Ab$.
-
-Take matrix derivative w.r.t $\beta$:
-
-```tex
-\begin{aligned}
-  \min Q           & = \min_{\beta} \mathbf{Y}'\mathbf{Y} - 2\beta'\mathbf{X}'\mathbf{Y} +
-  \beta'\mathbf{X}'\mathbf{X}\beta \\
-                   & = \min_{\beta} - 2\beta'\mathbf{X}'\mathbf{Y} + \beta'\mathbf{X}'\mathbf{X}\beta \\
-  \text{[FOC]}~~~0 & =  - 2\mathbf{X}'\mathbf{Y} + 2\mathbf{X}'\mathbf{X}\hat{\beta}                  \\
-  \hat{\beta}      & = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y}                              \\
-                   & = (\sum^{n} \mathbf{x}_i \mathbf{x}'_i)^{-1} \sum^{n} \mathbf{x}_i y_i
-\end{aligned}
-```
-
-$$
-\begin{aligned}
-  \min Q           & = \min_{\beta} \mathbf{Y}'\mathbf{Y} - 2\beta'\mathbf{X}'\mathbf{Y} +
-  \beta'\mathbf{X}'\mathbf{X}\beta \\
-                   & = \min_{\beta} - 2\beta'\mathbf{X}'\mathbf{Y} + \beta'\mathbf{X}'\mathbf{X}\beta \\
-  \text{[FOC]}~~~0 & =  - 2\mathbf{X}'\mathbf{Y} + 2\mathbf{X}'\mathbf{X}\hat{\beta}                  \\
-  \hat{\beta}      & = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y}                              \\
-                   & = (\sum^{n} \mathbf{x}_i \mathbf{x}'_i)^{-1} \sum^{n} \mathbf{x}_i y_i
-\end{aligned}
-$$
+<div class="flex items-center py-10">
+    <span class="pr-5 font-body font-medium text-primary dark:text-white">Share</span>
+    <a href="#">
+        <i class="bx bxl-facebook text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+    <a href="#">
+        <i class="bx bxl-twitter pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+    <a href="#">
+        <i class="bx bxl-linkedin pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+    <a href="#">
+        <i class="bx bxl-reddit pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+</div>

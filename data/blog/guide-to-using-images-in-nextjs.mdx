@@ -1,72 +1,57 @@
 ---
-title: Images in Next.js
-date: '2020-11-11'
-tags: ['next js', 'guide']
-draft: false
-summary: 'In this article we introduce adding images in the tailwind starter blog and the benefits and limitations of the next/image component.'
-authors: ['sparrowhawk']
+title: 'From Shadows to Light: AI Biases and Societal Reflections'
+date: '2023-08-31'
+tags: ['Technology', 'Society', 'AI', 'Bias']
+summary: 'Explore Plato\'s Allegory of the Cave, AI biases reflecting society\'s shadows, and embrace responsibility for transformative change in this insightful blog post by Hridesh Sapkota.'
+authors: ['Hridesh Sapkota']
 ---
 
-# Introduction
+import Image from 'next/image';
 
-The tailwind starter blog has out of the box support for [Next.js's built-in image component](https://nextjs.org/docs/api-reference/next/image) and automatically swaps out default image tags in markdown or mdx documents to use the Image component provided.
+![Allegory of the cave](/assets/img/allegory/caveww.webp)
 
-# Usage
+# Discovering the Allegory
 
-To use in a new page route / javascript file, simply import the image component and call it e.g.
+In the quiet corners of my life, I often find solace in the bookshop's embrace, seeking out classical times that I bring home with great intention. However, there they sometimes rest, untouched and gathering dust. One early Saturday morning, amidst the task of clearing the clutter that had accumulated over weeks, I stumbled upon a book I had acquired months ago—a book whose pages had remained largely unexplored. As I skimmed through its chapters, a particular story caught my eye, a chapter on allegory. This narrative gem was none other than Plato's famous [allegory of the cave](https://www.youtube.com/watch?v=1RWOpQXTltA), nestled within his work, "The Republic."
 
-```js
-import Image from 'next/image'
+For those unfamiliar, this allegory is a conversation between Plato's mentor Socrates and his brother Glaucon. It delves into the transformative impact of education and the lack thereof on our very nature. The allegory uses the imagery of captives chained within a cave, perceiving only shadows on the wall as reality. It's a profound exploration of perception, enlightenment, and the journey from ignorance to knowledge.
 
-function Home() {
-  return (
-    <>
-      <h1>My Homepage</h1>
-      <Image src="/me.png" alt="Picture of the author" width={500} height={500} />
-      <p>Welcome to my homepage!</p>
-    </>
-  )
-}
+The resonance of this story was profound, particularly in the context of our contemporary discourse surrounding the rapid ascent of artificial intelligence (AI). In a world where AI is pervasive, from our social media feeds to dominating headlines, debates rage over its benefits and drawbacks. It's reminiscent of the [uncanny valley](https://spectrum.ieee.org/the-uncanny-valley) phenomenon, a realm where technology's power becomes almost eerie in its realism. This has been epitomized by the emergence of ChatGPT, an AI that showcases the remarkable capabilities of this technology.
 
-export default Home
-```
+> The shadows of bias have cast a long history, an indelible part of human existence.
 
-For a markdown file, the default image tag can be used and the default `img` tag gets replaced by the `Image` component in the build process.
+## Shadows of Bias
 
-Assuming we have a file called `ocean.jpg` in `data/img/ocean.jpg`, the following line of code would generate the optimized image.
+Yet, within this discourse, a recurring theme emerges: the biases inherent in AI models. It's a facet that almost every technological innovation must confront when introduced into the fabric of society. The shadows of bias have cast a long history, an indelible part of human existence. Throughout history, marginalized voices have battled for their fundamental rights, a struggle that continues even today.
 
-```
-![ocean](/static/images/ocean.jpg)
-```
+In contemplating this, a thought germinated in my mind: what if the biases we encounter in AI are not anomalies, but reflections of our society's existing biases? Our data archives, collected over time, might unwittingly encapsulate the very biases we seek to overcome. These biases find their way into the algorithms, resulting in skewed outputs. The current controversies surrounding biases in AI might serve as a stark reminder that our past shadows continue to influence our present and future.
 
-Alternatively, since we are using mdx, we can just use the image component directly! Note, that you would have to provide a fixed width and height. The `img` tag method parses the dimension automatically.
+<div className="twitter-card">
+    <h4 className="twitter-card-title">"Our data archives, collected over time, might unwittingly encapsulate the very biases we seek to overcome. These biases find their way into the algorithms, resulting in skewed outputs."</h4>
+</div>
 
-```js
-<Image alt="ocean" src="/static/images/ocean.jpg" width={256} height={128} />
-```
+Yet, in the midst of this reflection, a counterargument emerges. Could these technologies, infused with our societal shadows, act as mirrors that force us to confront our prejudices? It's an intriguing perspective—the data-driven projections could be both a challenge and an opportunity. Instead of merely pointing fingers at technology, we could channel our focus towards ourselves and our societies. In essence, the biases within AI might be unsettling echoes of our deeply ingrained societal unfairness.
 
-_Note_: If you try to save the image, it is in webp format, if your browser supports it!
+## Embracing Responsibility
 
-![ocean](/static/images/ocean.jpeg)
+Ultimately, whether AI or social media algorithms, they remain creations of human ingenuity. The responsibility lies not solely in blaming these technologies, but in using their existence as a catalyst for introspection and transformation. If our innovations are mirrors reflecting our society, then it's upon us to reshape that society, to erase the biases that have been insidiously woven into its fabric.
 
-Photo by [YUCAR FotoGrafik](https://unsplash.com/@yucar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-on [Unsplash](https://unsplash.com/s/photos/sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+![Image](/assets/img/allegory/robot and humanw.webp)
 
-# Benefits
+As I closed the book that had ignited this trail of thought, I realized that the shadows in Plato's cave weren't just an ancient allegory—they were living on in our AI systems, compelling us to unravel their mystery. The journey from the cave's darkness to the light of understanding requires not just algorithms, but a concerted effort to restructure our societies, casting aside the chains of bias and forging a new path forward.
 
-- Smaller image size with Webp (~30% smaller than jpeg)
-- Responsive images - the correct image size is served based on the user's viewport
-- Lazy loading - images load as they are scrolled to the viewport
-- Avoids [Cumulative Layout Shift](https://web.dev/cls/)
-- Optimization on demand instead of build-time - no increase in build time!
-
-# Limitations
-
-- Due to the reliance on `next/image`, unless you are using an external image CDN like Cloudinary or Imgix, it is practically required to use Vercel for hosting. This is because the component acts like a serverless function that calls a highly optimized image CDN.
-
-  If you do not want to be tied to Vercel, you can remove `imgToJsx` in `remarkPlugins` in `lib/mdx.js`. This would avoid substituting the default `img` tag.
-
-  Alternatively, one could wait for image optimization at build time to be supported. A different library, [next-optimized-images](https://github.com/cyrilwanner/next-optimized-images) does that, although it requires transforming the images through webpack which is not done here.
-
-- Images from external links are not passed through `next/image`
-- All images have to be stored in the `public` folder e.g `/static/images/ocean.jpeg`
+<div className="flex items-center py-10">
+    <span className="pr-5 font-body font-medium text-primary dark:text-white">Share</span>
+    <a href="/">
+        <i className="bx bxl-facebook text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+    <a href="/">
+        <i className="bx bxl-twitter pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+    <a href="/">
+        <i className="bx bxl-linkedin pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+    <a href="/">
+        <i className="bx bxl-reddit pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+    </a>
+</div>
