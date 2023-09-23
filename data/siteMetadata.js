@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Hridesh Sapkota Blog',
+  title: 'Hridesh | Portfolio',
   author: 'Hridesh Sapkota',
-  headerTitle: 'HrideshBlog',
+  headerTitle: 'Hridesh,
   description: 'A personal blog by Hridesh Sapkota',
   language: 'en-us',
   theme: 'system', // system, dark or light
