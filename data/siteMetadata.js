@@ -2,7 +2,7 @@
 const siteMetadata = {
   title: 'Hridesh | Portfolio',
   author: 'Hridesh Sapkota',
-  headerTitle: 'Hridesh,
+  headerTitle: 'Hridesh',
   description: 'A personal blog by Hridesh Sapkota',
   language: 'en-us',
   theme: 'system', // system, dark or light
